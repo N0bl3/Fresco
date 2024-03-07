@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  div#welcome
+    h1= title
+  table#fresco()
+    tbody 
+      each row, index_y in pixels
+        tr.pixel-row
+          each pixel, index_x in pixels[index_y]
+            td.pixel(style=`background-color:rgb(${pixel.r},${pixel.g},${pixel.b});` x=index_x y=index_y _id=pixel._id)
+  div#input-box
+    label(for="colorpicker") Color picker: 
+    input#color-picker(type="color", name="color-picker")
+  script
+    include ../public/javascripts/index.js
