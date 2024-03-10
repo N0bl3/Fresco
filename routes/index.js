@@ -57,7 +57,6 @@ router.get("/", function (req, res, next) {
             { $set: { r: changedPixel.r, g: changedPixel.g, b: changedPixel.b } }
           );
           console.log("Updated documents =>", updateResult);
-          pixels[changedPixelIndex] = changedPixel;
           res.sendStatus(200);
         } catch (e) {
           console.error(e);

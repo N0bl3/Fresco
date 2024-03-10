@@ -26,6 +26,7 @@ const { MongoClient, ServerApiVersion } = require("mongodb");
 const client = new MongoClient(process.env.MONGODB_URI);
 const dbName = "Fresco";
 
+debug('loading db ', dbName);
 let db, collection, pixels;
 async function main() {
   try {
@@ -39,9 +40,7 @@ async function main() {
     db = client.db(dbName);
     collection = db.collection("pixels");
   } catch (err) {
-    console.log(err);
-  } finally {
-    console.log("pixels successfully loaded");
+    console.error(err);
   }
 }
 main();

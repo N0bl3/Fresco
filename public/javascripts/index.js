@@ -1,19 +1,19 @@
 var fresco = document.getElementById("fresco");
-var mousedown = false;
 
+var mousedown = 0;
 fresco.addEventListener("mousedown", function (e) {
     e.preventDefault();
-    mousedown = true;
+    mousedown = 1;
 });
 fresco.addEventListener("mouseup", function (e) {
     e.preventDefault();
-    mousedown = false;
+    mousedown = 0;
 });
 
 var pixels = document.getElementsByClassName("pixel");
 for (let i = 0; i < pixels.length; i++) {
     pixels[i].addEventListener("mouseenter", function (e) {
-        if ((mousedown = true)) {
+        if ((mousedown)) {
             const hexColor = document.getElementById("color-picker").value;
             const r = parseInt(hexColor.slice(1, 3), 16);
             const g = parseInt(hexColor.slice(3, 5), 16);
