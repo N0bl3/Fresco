@@ -11,7 +11,7 @@ var app = express();
 var expressWs = require('express-ws')(app);
 
 // routes setup
-const index = require(path.join(__dirname, "routes/index"))
+const index = require(path.join(__dirname, "api/index"))
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
