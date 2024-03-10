@@ -36,7 +36,7 @@ for (let i = 0; i < pixels.length; i++) {
             const b = parseInt(hexColor.slice(5, 7), 16);
 
             this.setAttribute("style", `background-color:rgb(${r},${g},${b})`);
-            /*
+            
             var changeColor = new XMLHttpRequest();
             changeColor.open("POST", "/change", true);
             changeColor.setRequestHeader(
@@ -46,15 +46,15 @@ for (let i = 0; i < pixels.length; i++) {
             changeColor.send(
                 `_id=${this.getAttribute("_id")}&x=${this.getAttribute("x")}&y=${this.getAttribute("y")}&r=${r}&g=${g}&b=${b}`
             );
-            */
-            socket.send(JSON.stringify({
+            
+            /* socket.send(JSON.stringify({
                 _id: this.getAttribute("_id"),
                 x: this.getAttribute("x"),
                 y: this.getAttribute("y"),
                 r: r,
                 g: g,
                 b: b
-            }))
+            }))*/
 
         }
     });
