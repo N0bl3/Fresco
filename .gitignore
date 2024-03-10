@@ -1,0 +1,4 @@
+.node-gyp
+node_modules
+.vscode/
+.env
